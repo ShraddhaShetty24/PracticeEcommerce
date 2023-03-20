@@ -1,0 +1,110 @@
+<div style="padding-left: 200px;">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ProductId</th>
+      <th scope="col">ProductName</th>
+      <th scope="col">ProductPrice</th>
+      <th scope="col">ProductDescription</th>
+      <th scope="col">CategoryId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ele of productList">
+      <!-- <th scope="row">1</th> -->
+      <td>{{ele.productId}}</td>
+      <td>{{ele.productName}}</td>
+      <td>{{ele.productPrice}}</td>
+      <td>{{ele.productDescription}}</td>
+      <td>{{ele.categoryId}}</td>
+      <!-- <td><button type="button" class="btn btn-danger" (click)="delete(ele.id)">Delete</button></td>
+      <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateModalToggle" (click)="getData(ele)">Edit</button></td>  -->
+    </tr>
+  </tbody>
+</table>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModalToggle" >Add</button>
+
+<!--Modal for add-->
+
+<div class="modal fade" id="addModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" >Add new Product</h5>
+          
+        </div>
+        <div class="modal-body">
+            <form ngForm="myForm" (ngSubmit)="createProduct()">
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <input type="text" class="form-control" id="productName" name="productName" placeholder="" [(ngModel)]="product.ProductName">
+            </div>
+              <div class="form-group">
+                <label for="age">Product Price</label>
+                <input type="text" class="form-control" id="productPrice" name="productPrice" placeholder="" [(ngModel)]="product.ProductPrice">
+              </div>
+              <div class="form-group">
+                <label for="department">Product Description Department</label>
+                <input type="text" class="form-control" id="productDescription" name="productDescription" placeholder="" [(ngModel)]="product.ProductDescription">
+              </div>
+              <div class="form-group">
+                <label for="designation">Product Category</label>
+                <input type="text" class="form-control" id="category" name="category" placeholder="" [(ngModel)]="product.CategoryId">
+              </div>
+             
+              <div class="modal-footer"> 
+                <button type="submit" class="btn btn-primary" >Save</button> 
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+          
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <!--Modal for update-->
+  <!-- <div class="modal fade" id="updateModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" >Add new Employee</h5>
+         
+        </div>
+        <div class="modal-body">
+            <form ngForm="myForm" (ngSubmit)="updateEmployee()">
+            <div class="form-group">
+              <label for="name">Employee Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="" [(ngModel)]="employee.name">
+            </div>
+              <div class="form-group">
+                <label for="age">Employee Age</label>
+                <input type="text" class="form-control" id="age" name="age" placeholder="" [(ngModel)]="employee.age">
+              </div>
+              <div class="form-group">
+                <label for="department">Employee Department</label>
+                <input type="text" class="form-control" id="department" name="department" placeholder="" [(ngModel)]="employee.department">
+              </div>
+              <div class="form-group">
+                <label for="designation">Employee Designation</label>
+                <input type="text" class="form-control" id="designation" name="designation" placeholder="" [(ngModel)]="employee.designation">
+              </div>
+              <div class="form-group">
+                <label for="salary">Employee Salary</label>
+                <input type="text" class="form-control" id="salary" name="salary" placeholder="" [(ngModel)]="employee.salary">
+              </div>
+
+              <div class="modal-footer"> <button type="submit" class="btn btn-primary">Save</button> 
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+          
+        </div>
+       
+      </div>
+    </div>
+  </div> -->
+</div>
