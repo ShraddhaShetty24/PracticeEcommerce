@@ -41,9 +41,9 @@ export class ProductCrudComponent implements OnInit {
   //     this.listOfProducts();
   //   }))
   // }
-//  updateEmployee(){
-//   this.crudservice.update(this.data.id,this.employee).subscribe((response=>{
-//     this.listEmployees();
+//  updateProduct(){
+//   this.service.update(this.data.id,this.product).subscribe((response=>{
+//     this.listOfProducts();
 //   }))
 //  }
   
